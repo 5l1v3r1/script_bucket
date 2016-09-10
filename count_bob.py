@@ -16,6 +16,7 @@ count_1 = s_preset.count("bob")
 print("%s bobs in the preset string" % count_1)
 
 
+
 # do it manually
 print("+++++++++++++\nDoing it manually\n+++++++++++++")
 b = 0
