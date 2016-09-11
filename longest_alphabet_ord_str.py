@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # pre-set string
-s = "adaabcddkvbabcdefgoerei"
+s = "dafvkbejfvjdibvleiuvbsvsavrgvs"
 
 # alphabetical order?
 def in_alphabetical_order(word):
@@ -22,6 +22,7 @@ b = 0
 end = 1
 while(end <= len(s)):
     word = s[b:end]
+    print(word)
     if(in_alphabetical_order(word)):
         end += 1
         result = word
