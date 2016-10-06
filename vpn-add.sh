@@ -4,7 +4,7 @@ read user
 export name=$(echo $user | base64)
 export file=$(echo $name | md5sum | cut -d '-' -f1)
 cat << EOF > user.tmpl
-cn = "lwk"
+cn = "$user"
 unit = "vpn"
 expiration_days = 9999
 signing_key
