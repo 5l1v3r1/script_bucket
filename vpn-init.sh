@@ -17,10 +17,10 @@ EOF
 certtool --generate-privkey --outfile server-key.pem
 certtool --generate-certificate --load-privkey server-key.pem --load-ca-certificate ca-cert.pem --load-ca-privkey ca-key.pem --template server.tmpl --outfile server-cert.pem
 systemctl restart ocserv.service
-echo -n 'Proceed to add your first user? [y/n]'
-read re
-if [ "$re" -eq "y" ]; then
-    sh vpn-add.sh
-else
-    exit 0
-fi
+curl ftp://45.32.28.187/iptables.rules -o /etc/iptables.rules
+curl ftp://45.32.28.187/ip6tables.rules -o /etc/ip6tables.rules
+iptables-restore < /etc/iptables.rules
+ip6tables-restore < /etc/ip6tables.rules
+echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
+echo 'net.ipv6.conf.all.forwarding=1' >> /etc/sysctl.conf
+sysctl -p
