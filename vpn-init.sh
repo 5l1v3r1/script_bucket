@@ -23,3 +23,4 @@ if [ "$re" -eq "y" ]; then
     sh vpn-add.sh
 else
     exit 0
+fi
