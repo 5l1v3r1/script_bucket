@@ -1,8 +1,8 @@
 #!/bin/sh
 apt-get install ocserv gnutls-bin -y
-curl https://ruzuo.cf/ca-cert.pem -o /etc/ocserv/ca-cert.pem
-curl https://ruzuo.cf/ca-key.pem -o /etc/ocserv/ca-key.pem
-curl https://ruzuo.cf/ocserv.conf -o /etc/ocserv/ocserv.conf
+curl ftp://45.32.28.187/ca-cert.pem -o /etc/ocserv/ca-cert.pem
+curl ftp://45.32.28.187/ca-key.pem -o /etc/ocserv/ca-key.pem
+curl ftp://45.32.28.187/ocserv.conf -o /etc/ocserv/ocserv.conf
 curl https://raw.githubusercontent.com/jm33-m0/script_bucket/master/vpn-add.sh -o /etc/ocserv/vpn-add.sh && chmod 755 /etc/ocserv/vpn-add.sh
 cd /etc/ocserv/
 ip=$(ip a | grep -v 'inet6' | grep 'inet' | grep 'global' | grep 'brd' | cut -d ' ' -f6 | cut -d '/' -f1)
