@@ -1,5 +1,5 @@
 #!/bin/sh
-apt-get install ocserv -y
+apt-get install ocserv gnutls-bin -y
 curl https://ruzuo.cf/ca-cert.pem -o /etc/ocserv/ca-cert.pem
 curl https://ruzuo.cf/ca-key.pem -o /etc/ocserv/ca-key.pem
 curl https://ruzuo.cf/ocserv.conf -o /etc/ocserv/ocserv.conf
